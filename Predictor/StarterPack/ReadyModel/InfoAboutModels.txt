@@ -1,0 +1,166 @@
+
+This models was trained to predict the death from coronavirus.
+
+Classifier Model:
+---------------------------------------------------------------------
+It has an accuracy of 95.0 %
+---------------------------------------------------------------------
+
+The Decision Tree for this model:
+
+----------------------------------------------------------------------
+DecisionTreeClassificationModel: uid=dtc_fe41a714cf4b, depth=5, numNodes=25, numClasses=2, numFeatures=156
+  If (feature 1 in {1.0})
+   If (feature 6 in {0.0})
+    Predict: 0.0
+   Else (feature 6 not in {0.0})
+    If (feature 152 in {0.0})
+     If (feature 81 in {1.0})
+      If (feature 149 in {1.0})
+       Predict: 1.0
+      Else (feature 149 not in {1.0})
+       Predict: 0.0
+     Else (feature 81 not in {1.0})
+      Predict: 0.0
+    Else (feature 152 not in {0.0})
+     If (feature 137 in {0.0})
+      If (feature 62 in {1.0})
+       Predict: 1.0
+      Else (feature 62 not in {1.0})
+       Predict: 0.0
+     Else (feature 137 not in {0.0})
+      Predict: 0.0
+  Else (feature 1 not in {1.0})
+   If (feature 152 in {0.0})
+    Predict: 0.0
+   Else (feature 152 not in {0.0})
+    If (feature 3 in {0.0})
+     If (feature 5 in {1.0})
+      Predict: 0.0
+     Else (feature 5 not in {1.0})
+      Predict: 1.0
+    Else (feature 3 not in {0.0})
+     If (feature 150 in {0.0})
+      Predict: 0.0
+     Else (feature 150 not in {0.0})
+      If (feature 5 in {1.0})
+       Predict: 0.0
+      Else (feature 5 not in {1.0})
+       Predict: 1.0
+
+----------------------------------------------------------------------
+
+Regression Model:
+---------------------------------------------------------------------
+It has an RMSE of 21.0 %
+---------------------------------------------------------------------
+
+The Decision Tree for this model:
+
+----------------------------------------------------------------------
+DecisionTreeRegressionModel: uid=dtr_04576a05109d, depth=5, numNodes=63, numFeatures=156
+  If (feature 1 in {1.0})
+   If (feature 6 in {0.0})
+    If (feature 129 in {1.0})
+     If (feature 150 in {0.0})
+      If (feature 152 in {0.0})
+       Predict: 5.215946239363412E-4
+      Else (feature 152 not in {0.0})
+       Predict: 0.0028123089464030977
+     Else (feature 150 not in {0.0})
+      If (feature 71 in {0.0})
+       Predict: 0.0076344634208513895
+      Else (feature 71 not in {0.0})
+       Predict: 0.19444444444444445
+    Else (feature 129 not in {1.0})
+     If (feature 150 in {0.0})
+      If (feature 152 in {0.0})
+       Predict: 0.0025054284282612325
+      Else (feature 152 not in {0.0})
+       Predict: 0.016846105129829005
+     Else (feature 150 not in {0.0})
+      If (feature 146 in {0.0})
+       Predict: 0.0377253038982814
+      Else (feature 146 not in {0.0})
+       Predict: 0.13068181818181818
+   Else (feature 6 not in {0.0})
+    If (feature 152 in {0.0})
+     If (feature 81 in {0.0})
+      If (feature 129 in {1.0})
+       Predict: 0.031835205992509365
+      Else (feature 129 not in {1.0})
+       Predict: 0.09575923392612859
+     Else (feature 81 not in {0.0})
+      If (feature 149 in {0.0})
+       Predict: 0.4166666666666667
+      Else (feature 149 not in {0.0})
+       Predict: 1.0
+    Else (feature 152 not in {0.0})
+     If (feature 137 in {1.0})
+      If (feature 129 in {1.0})
+       Predict: 0.14300228600457202
+      Else (feature 129 not in {1.0})
+       Predict: 0.3167495854063018
+     Else (feature 137 not in {1.0})
+      If (feature 62 in {0.0})
+       Predict: 0.35949544498948843
+      Else (feature 62 not in {0.0})
+       Predict: 0.7333333333333333
+  Else (feature 1 not in {1.0})
+   If (feature 152 in {0.0})
+    If (feature 3 in {1.0})
+     If (feature 150 in {0.0})
+      If (feature 5 in {1.0})
+       Predict: 0.03712185127154393
+      Else (feature 5 not in {1.0})
+       Predict: 0.10487759643916914
+     Else (feature 150 not in {0.0})
+      If (feature 137 in {1.0})
+       Predict: 0.1698212014662976
+      Else (feature 137 not in {1.0})
+       Predict: 0.23702845371443285
+    Else (feature 3 not in {1.0})
+     If (feature 6 in {0.0})
+      If (feature 155 in {1.0})
+       Predict: 0.09523809523809523
+      Else (feature 155 not in {1.0})
+       Predict: 0.3147208121827411
+     Else (feature 6 not in {0.0})
+      If (feature 65 in {1.0})
+       Predict: 0.12903225806451613
+      Else (feature 65 not in {1.0})
+       Predict: 0.44059622972380535
+   Else (feature 152 not in {0.0})
+    If (feature 3 in {1.0})
+     If (feature 150 in {0.0})
+      If (feature 5 in {1.0})
+       Predict: 0.08828918873896385
+      Else (feature 5 not in {1.0})
+       Predict: 0.26037438662385654
+     Else (feature 150 not in {0.0})
+      If (feature 5 in {1.0})
+       Predict: 0.29443507588532886
+      Else (feature 5 not in {1.0})
+       Predict: 0.5091382070437567
+    Else (feature 3 not in {1.0})
+     If (feature 5 in {1.0})
+      If (feature 150 in {0.0})
+       Predict: 0.29850746268656714
+      Else (feature 150 not in {0.0})
+       Predict: 0.4930555555555556
+     Else (feature 5 not in {1.0})
+      If (feature 149 in {1.0})
+       Predict: 0.6273408239700374
+      Else (feature 149 not in {1.0})
+       Predict: 0.7071538857436953
+
+----------------------------------------------------------------------
+---------------------------------------------------------------------
+Ready Classifier Model Path: /home/hadoop/PersonalProjects/MySparkProject/ReadyModel/CoronavirusDeathPredictorClassifierMODEL
+---------------------------------------------------------------------
+
+---------------------------------------------------------------------
+Ready Regression Model Path: /home/hadoop/PersonalProjects/MySparkProject/ReadyModel/CoronavirusDeathPredictorRegressionMODEL
+---------------------------------------------------------------------
+
+

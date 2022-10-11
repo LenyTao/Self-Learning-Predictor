@@ -1,0 +1,2 @@
+v1
+{"path":"hdfs://namenode:9000/training_data/entry_date=2022-02-21/part-00000-8c921766-70d8-4952-99c7-e7c11aae1d5e.c000.snappy.parquet","size":6085,"isDir":false,"modificationTime":1645541764142,"blockReplication":3,"blockSize":134217728,"action":"add"}

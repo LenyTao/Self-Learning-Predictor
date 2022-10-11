@@ -1,0 +1,92 @@
+version: '3'
+services:
+  zookeper:
+    extends:
+      file: Kafka/docker-compose.yml
+      service: zookeeper
+
+  kafka:
+    extends:
+      file: Kafka/docker-compose.yml
+      service: kafka
+    depends_on:
+      - zookeper  
+                
+  cassandra:
+    extends:
+      file: Cassandra/docker-compose.yml
+      service: cassandra
+    depends_on:
+      - kafka  
+
+  namenode:
+    extends:
+      file: HDFS/docker-compose.yml
+      service: namenode
+    depends_on:
+      - cassandra
+
+  hdfs_datanode:
+    extends:
+      file: HDFS/docker-compose.yml
+      service: hdfs_datanode
+    depends_on:
+      - namenode
+
+  postgres:
+    extends:
+      file: Data_Trainer/docker-compose.yml
+      service: postgres
+    depends_on:
+      - hdfs_datanode
+  minio:
+    extends:
+      file: Data_Trainer/docker-compose.yml
+      service: minio
+    depends_on:
+      - postgres
+  
+  minio-mc:
+    extends:
+      file: Data_Trainer/docker-compose.yml
+      service: minio-mc
+    depends_on:
+      - minio
+
+  airflow:
+    extends:
+      file: Data_Trainer/docker-compose.yml
+      service: airflow
+    depends_on:
+      - minio-mc
+
+  mlflow:
+    extends:
+      file: Data_Trainer/docker-compose.yml
+      service: mlflow
+    depends_on:
+      - airflow
+
+  flask_ui:
+    extends:
+      file: Flask_UI/docker-compose.yml
+      service: flask_ui
+    depends_on:
+      - mlflow
+
+  warehouse_data_loader:
+    extends:
+      file: Data_Loader/docker-compose.yml
+      service: warehouse_data_loader
+    depends_on:
+      - flask_ui
+
+  predictor:
+    extends:
+      file: Predictor/docker-compose.yml
+      service: predictor
+    depends_on:
+      - warehouse_data_loader
+
+
+

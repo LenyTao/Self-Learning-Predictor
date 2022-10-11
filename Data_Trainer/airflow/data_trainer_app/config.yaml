@@ -1,0 +1,11 @@
+spark:
+  app_name: DataTrainer
+  master: local[*]
+spark_ml:
+  training_data_path: hdfs://namenode:9000/training_data/*
+  ready_models_path: hdfs://namenode:9000/new_model/ReadyModel
+ml_flow:
+  tracking_uri: http://mlflow:5000
+  experiment_name: CovidExperiment
+  model_name: CovidModel
+  artifact_tmp_path: /tmp/mlflow_artifacts

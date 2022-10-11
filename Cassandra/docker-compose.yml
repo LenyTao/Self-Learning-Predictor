@@ -1,0 +1,20 @@
+version: '3'
+services:
+  cassandra:
+    image: cassandra
+    restart: always
+    container_name: cassandra
+    ports:
+     - "9042:9042"
+    healthcheck:
+      test: "cqlsh -f ./cassandra_scripts/init-database.cql"
+      interval: 30s
+      retries: 1
+      start_period: 10s
+      timeout: 10s
+    environment:
+     - "CASSANDRA_CLUSTER_NAME=CASSANDRA WITH PREDICTION"
+    volumes:
+      - "./cassandra_volume:/var/lib/cassandra/data/"
+      - "./cassandra_script:/cassandra_scripts"
+

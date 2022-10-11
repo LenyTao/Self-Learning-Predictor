@@ -1,0 +1,4 @@
+mlflow[extras]
+boto3
+psycopg2
+pyspark==3.0.3

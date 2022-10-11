@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  predictor:
+    build: PredictorApp/
+    container_name: predictor
+    command: bash ./run_predictor.sh
+
+
+

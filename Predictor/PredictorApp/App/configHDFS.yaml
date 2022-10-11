@@ -1,0 +1,22 @@
+spark:
+  app_name: Predictor
+  master: local[*]
+  checkpoint_location: ./tmp/checkpoint
+kafka:
+  host: kafka
+  port: 9090
+  topic: input_events
+spark_ml:
+  classifier_model_path: hdfs://namenode:9000/actual_model/ReadyModel/PredictorClassifierMODEL/
+  regression_model_path: hdfs://namenode:9000/actual_model/ReadyModel/PredictorRegressionMODEL/
+cassandra:
+  db_host: cassandra
+  db_port: 9042
+  db_username: admin
+  db_password: root1
+  db_key_store: covid_predictor_app
+  db_table_name: predictions
+
+
+
+

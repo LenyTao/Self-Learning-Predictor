@@ -1,0 +1,11 @@
+spark:
+  app_name: DataLoader
+  master: local[*]
+kafka:
+  host: kafka
+  port: 9090
+  topic: training_data
+checkpoint:
+  path: ./tmp/training_data_checkpoint
+data_warehouse:
+  training_data_path: hdfs://namenode:9000/training_data/

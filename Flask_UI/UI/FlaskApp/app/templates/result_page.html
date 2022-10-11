@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result_page.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<br>
+<br>
+<br>
+<div class="header-h1">
+    <h1 align="center"> Результаты </h1>
+</div>
+<table align="center" class="table_blur">
+    <tr>
+        <th><center>Дата поступления пациента</center></th>
+        <th><center>Имя</center></th>
+        <th><center>Возраст</center></th>
+        <th><center>Вероятность смерти</center></th>
+        <th><center>Факт смерти</center></th>
+        <th><center>Умер ли человек от COVID-19</center></th>
+        <th></th>
+    </tr>
+    {% for elm in records %}
+    <form action="/sender_for_learning" method="post">
+        <tr>
+            <td>
+                <center>
+                    {{elm.entry_date}}
+                </center>
+            </td>
+            <td>
+                <center>
+                    {{elm.name}}
+                </center>
+            </td>
+            <td>
+                <center>
+                    {{elm.age}}
+                </center>
+            </td>
+            <td>
+                <center>
+                    {{elm.regression_prediction*100}} %
+                </center>
+            </td>
+            <td>
+                <center>
+                    {{elm.classifier_prediction}}
+                </center>
+            </td>
+            <td>
+                <center>
+                    <select name="death">
+                        <option label="Да" value="1"></option>
+                        <option label="Нет" value="0"></option>
+                    </select>
+                </center>
+                <input type="hidden" name="id_event" value="{{elm.id_event}}">
+                <input type="hidden" name="sex" value="{{elm.sex}}">
+                <input type="hidden" name="patient_type" value="{{elm.patient_type}}">
+                <input type="hidden" name="entry_date" value="{{elm.entry_date}}">
+                <input type="hidden" name="date_symptoms" value="{{elm.date_symptoms}}">
+                <input type="hidden" name="intubed" value="{{elm.intubed}}">
+                <input type="hidden" name="pneumonia" value="{{elm.pneumonia}}">
+                <input type="hidden" name="age" value="{{elm.age}}">
+                <input type="hidden" name="pregnancy" value="{{elm.pregnancy}}">
+                <input type="hidden" name="diabetes" value="{{elm.diabetes}}">
+                <input type="hidden" name="copd" value="{{elm.copd}}">
+                <input type="hidden" name="asthma" value="{{elm.asthma}}">
+                <input type="hidden" name="inmsupr" value="{{elm.inmsupr}}">
+                <input type="hidden" name="hypertension" value="{{elm.hypertension}}">
+                <input type="hidden" name="other_disease" value="{{elm.other_disease}}">
+                <input type="hidden" name="cardiovascular" value="{{elm.cardiovascular}}">
+                <input type="hidden" name="obesity" value="{{elm.obesity}}">
+                <input type="hidden" name="renal_chronic" value="{{elm.renal_chronic}}">
+                <input type="hidden" name="tobacco" value="{{elm.tobacco}}">
+                <input type="hidden" name="contact_other_covid" value="{{elm.contact_other_covid}}">
+                <input type="hidden" name="covid_res" value="{{elm.covid_res}}">
+                <input type="hidden" name="icu" value="{{elm.icu}}">
+            </td>
+            <td><input type="submit" value="Отправить"></td>
+        </tr>
+    </form>
+    {% endfor %}
+</table>
+
+
+</body>
+</html>

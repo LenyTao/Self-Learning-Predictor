@@ -1,0 +1,8 @@
+apache-airflow
+apache-airflow-providers-docker
+apache-airflow-providers-apache-spark
+pyspark==3.0.3
+pandas
+mlflow[extras]
+boto3
+

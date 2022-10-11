@@ -1,0 +1,18 @@
+kafka:
+  input:
+    host: kafka
+    port: 9090
+    topic: input_events
+  learning:
+    host: kafka
+    port: 9090
+    topic: training_data
+cassandra:
+  host: cassandra
+  port: 9042
+  username: admin
+  password: root1
+  keystore: covid_predictor_app
+  table_name: predictions
+
+

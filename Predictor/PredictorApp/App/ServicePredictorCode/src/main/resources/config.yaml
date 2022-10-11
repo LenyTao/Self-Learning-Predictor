@@ -1,0 +1,27 @@
+spark:
+  app_name: SenderToKafka
+  master: local[*]
+  checkpoint_location: D:\Projects\PersonalProject\CovidDeathPredictor\checkpoint
+kafka:
+  host: localhost
+  port: 9092
+  topic: input_events
+spark_ml:
+  classifier_model_path: D:\Projects\PersonalProject\MySparkProjectML\ReadyModel\CoronavirusDeathPredictorClassifierMODEL
+  regression_model_path: D:\Projects\PersonalProject\MySparkProjectML\ReadyModel\CoronavirusDeathPredictorRegressionMODEL
+cassandra:
+  db_host: localhost
+  db_port: 9042
+  db_username: admin
+  db_password: root1
+  db_key_store: covid_predictor_app
+  db_table_name: predictions
+s3_store:
+  end_point: http://minio
+  access_key: minio
+  secret_key: miniominio
+
+
+
+
+

@@ -1,0 +1,1 @@
+exec //usr/local/lib/python3.8/dist-packages/pyspark/bin/spark-submit --master local[4] --class ru.mlservice.PredictorApp PredictorApp.jar  config.yaml

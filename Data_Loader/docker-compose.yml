@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  warehouse_data_loader:
+    build: DataLoader/
+    container_name: warehouse_data_loader
+    restart: always
+    command: python ./app.py 
+
+
+

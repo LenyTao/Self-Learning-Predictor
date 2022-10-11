@@ -1,0 +1,1 @@
+exec mlflow server --port 5000 --backend-store-uri postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@postgres/$POSTGRES_DB --default-artifact-root s3://$MLFLOW_BUCKET/ --host $MLFLOW_HOST
