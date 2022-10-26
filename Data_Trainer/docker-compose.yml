@@ -3,6 +3,7 @@ version: '3'
 services: 
   postgres:
     image: postgres
+    restart: always
     container_name: postgres_db
     env_file:
       - flow.env
@@ -10,6 +11,7 @@ services:
       - '5432:5432'
   minio:
     image: docker.io/bitnami/minio:2021
+    restart: always
     container_name: minio
     ports:
       - '9500:9000'
@@ -21,6 +23,7 @@ services:
   minio-mc:
     container_name: minio-mc
     image: minio/mc:latest
+    restart: always
     env_file:
       - flow.env
     entrypoint: >
@@ -37,6 +40,7 @@ services:
 
   mlflow:
     build: mlflow/
+    restart: always
     container_name: mlflow
     env_file:
       - flow.env
@@ -45,6 +49,7 @@ services:
     command: bash ./run_mlflow.sh  
   airflow:
     build: airflow/
+    restart: always
     container_name: airflow
     ports:      
       - '8080:8080'
